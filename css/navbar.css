@@ -1,0 +1,86 @@
+/* navbar.css */
+
+/* Navbar fissa */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2187a0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 65px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-pic {
+  display: flex;
+  align-items: center;
+  margin-right: 0; /* spazio tra la foto e il menu */
+}
+
+.profile-pic img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #a1d5d9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic img:hover {
+  transform: scale(1.05);
+}
+
+/* Centrare il menu anche con la foto */
+
+
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.navbar-link:hover {
+  color: #2187a0;
+  transform: translateY(-2px);
+  background-color: #a1d5d9;
+}
+
+.navbar-link i {
+  font-size: 18px;
+}
+.navbar-link.active {
+  background-color: #a1d5d9;
+  color: #2187a0;
+}

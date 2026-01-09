@@ -1,0 +1,207 @@
+/* ================================
+   Tablet (max-width: 768px)
+================================ */
+@media (max-width: 768px) {
+  /* Sezione Home */
+  #home {
+    padding-left: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-left: 0;
+  }
+
+  .button_inf {
+    font-size: 16px;
+    padding: 6px 12px;
+    max-width: 200px;
+  }
+
+  /* Sezione Chi Sono */
+  #chisono {
+    padding-top: 40px;
+  }
+
+  .main-title,
+  .main-description {
+    margin: 0 20px;
+    font-size: 18px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+  }
+  .profile-pic {
+    display: none;
+  }
+
+  .navbar-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .navbar-link {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+  /* icone social*/
+  .social-icons {
+    gap: 16px;
+  }
+
+  .social-icons a {
+    font-size: 32px;
+  }
+
+  .footer-content p {
+    font-size: 13px;
+    padding: 0 20px;
+  }
+
+  .sticky-footer {
+    padding: 30px 10px;
+  }
+
+}
+
+/* ================================
+   Smartphone (max-width: 480px)
+================================ */
+/* Nasconde il bottone hamburger su desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Mostra la navbar normalmente su desktop */
+.navbar-list {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  /* Tipografia */
+  h1 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .button_inf {
+    font-size: 14px;
+    padding: 5px 10px;
+    max-width: 180px;
+  }
+
+  .main-title,
+  .main-description {
+    font-size: 16px;
+    margin: 0 15px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    position: relative;
+  }
+  .profile-pic {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .navbar-list {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #2187A0;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    max-width:320px;
+    box-sizing:border-box;
+  }
+
+  .navbar-list.active {
+    display: flex;
+    margin: 0 auto;
+    
+  }
+
+  .navbar-link {
+    font-size: 14px;
+    padding: 6px 12px;
+    width: 100%;
+    text-align: center;
+     box-sizing: border-box;
+
+  }
+
+  .navbar-link i {
+    font-size: 16px;
+  }
+
+  .navbar-link:hover,
+.navbar-link:focus,
+.navbar-link.active {
+  background-color: #AEE1F9; /* azzurro armonioso */
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+/* icone social*/
+.social-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .social-icons a {
+    font-size: 28px;
+  }
+
+  .footer-content p {
+    font-size: 12px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .sticky-footer {
+    padding: 25px 8px;
+  }
+
+}

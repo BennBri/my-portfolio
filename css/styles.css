@@ -1,0 +1,396 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: black;
+
+  scroll-behavior: smooth;
+  margin: 0; /* Rimuove margini predefiniti del browser */
+
+  overflow-x: hidden; /* Evita scroll orizzontale se ci sono elementi larghi */
+  overflow-y: auto; /* Permette lo scroll verticale */
+  padding-bottom: 60px; /* Spazio per il footer */
+}
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Lo manda dietro al contenuto del sito */
+}
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sezione Home */
+/*------------------*/
+#home {
+  height: 100vh; /* Usa height fisso per evitare sforamenti */
+  display: flex; /* Attiva il layout flessibile */
+  flex-direction: column; /* Disposizione verticale degli elementi */
+  justify-content: center; /* Centra verticalmente il contenuto */
+  align-items: flex-start; /* Allinea a sinistra (puoi usare center se vuoi centrato) */
+  padding-left: 40px; /* Sposta tutto a sinistra con padding invece di margin */
+  box-sizing: border-box; /* Include padding nel calcolo dell’altezza */
+  /* background-image: url("/img/sfondo.jpg"); /* Percorso relativo all'immagine */
+  background-size: cover; /* Riempie tutta la sezione */
+  background-position: center; /* Centra l’immagine */
+  background-repeat: no-repeat; /* Non la ripete */
+  position: relative;
+  z-index: 1; /* Assicura che il contenuto sia sopra il canvas */
+}
+#home,
+#chisono ,
+#progetti,
+#contact {
+margin-top:0;
+}
+
+
+
+h1 {
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: regular;
+  font-size: 65px;
+  margin: 0 0 20px 0;
+}
+
+h3 {
+  color: #0a1128;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: thin;
+  font-size: 25px;
+  margin: 0 0 20px 10px;
+}
+
+.button_inf {
+  padding: 8px 16px; /* Spazio interno: 5px sopra/sotto, 10px destra/sinistra */
+  font-size: 18px; /* Dimensione del testo del bottone */
+  border-radius: 10px; /* Angoli arrotondati del bottone */
+  border: none; /* Nessun bordo */
+
+  background: linear-gradient(
+    to right,
+    #22819f,
+    #17c3b3
+  ); /* Sfondo nero per il bottone */
+  color: white;
+  font-family: "montserrat", sans-serif;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Profondità */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin: 20px 0 0 0;
+  display: inline-block; /* Fa sì che il bottone non occupi tutta la larghezza */
+  width: auto; /* Imposta la larghezza in base al contenuto del bottone */
+  max-width: 250px; /* Limita la larghezza massima del bottone a 250px */
+  box-sizing: border-box; /* Include padding e bordo nel calcolo della larghezza */
+}
+
+.button_inf:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Sezione Chi Sono */
+/*------------------*/
+
+#chisono {
+  /*background: linear-gradient(to right, #22819f, #17c3b3);*/
+  height: 100vh;
+  padding-top: 120px; /* Spazio sopra */
+  box-sizing: border-box;
+}
+
+#chisono h2:first-child {
+  margin-top: 0;
+}
+
+.intro {
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  
+  font-size: 20px;
+}
+.main-title {
+  margin: 0 50px 10px 50px;
+}
+
+.main-description {
+  margin: 20px 50px 0 50px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  text-align: justify;
+}
+/*sezione conoscenze*/
+#knowledge-section {
+  height: auto;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+#knowledge-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  padding-top:30px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+ filter:drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+
+.skill-item:hover .icon {
+  transform: scale(1.1);
+}
+.icon-html {
+  width: 100px;
+  height:100px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.skill-bar {
+  width: 100%;
+  max-width: 140px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.level {
+  height: 100%;
+  background:  #1282A2;
+  border-radius: 5px;
+  transition: width 1s ease;
+}
+
+/* Livelli personalizzati */
+.html { width: 80%; }
+.css { width: 60%; }
+.js { width: 30%; }
+.wp { width: 100%; }
+.bs { width: 40%; }
+/*sezione contatti*/
+/*------------------*/
+.contact-section {
+  min-height: 100vh; /* ✅ occupa tutta l’altezza visibile */
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.contact-section h2 {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: "montserrat", sans-serif;
+  font-weight: 400;
+ 
+}
+
+.email-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(to right, #22819f, #17c3b3);
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 59, 74, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.email-button i {
+  font-size: 22px;
+  color: white;
+}
+
+/* Effetto hover */
+.email-button:hover {
+  background-color: #87d1f0;
+  transform: scale(1.05);
+}
+
+/* Effetto ripple */
+.email-button::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: scale(1);
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+.email-button:active::after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  animation: ripple-ring 0.6s ease-out;
+}
+
+@keyframes ripple-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(8);
+    opacity: 0;
+  }
+}
+/* sezione Fondo pagina */
+/*------------------*/
+.sticky-footer {
+  position:fixed;
+  bottom: 20px;
+  left: 50%;
+   transform: translateX(-50%); 
+  width: 100%;
+ background-color: rgba(150, 220, 218, 0.6);
+border-radius: 50px;
+ width: fit-content;
+  color: white;
+  padding: 12px 30px;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenuto centrato */
+.footer-content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+/* Testo del footer */
+.footer-content p {
+  font-style: "montserrat", sans-serif;
+  font-weight: 200;
+  font-style: thin;
+
+  margin: 0;
+  font-size: 10px;
+}
+
+/*  Icone social */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: white;
+
+  font-size: 36px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a i {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #208ea3;
+}
